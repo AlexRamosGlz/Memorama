@@ -1,0 +1,10 @@
+@use '../util/scssVariables.style.scss' as variables;
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: variables.$text-base-color;
+}

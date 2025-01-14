@@ -1,0 +1,21 @@
+@use '../../util/scssVariables.style.scss' as variables;
+
+.footer {
+    background-color: variables.$footer-background-color;
+    height: 5rem;
+    color: variables.$text-light-color;
+}
+
+.footer ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.social {
+    flex-grow: .1;
+}
+

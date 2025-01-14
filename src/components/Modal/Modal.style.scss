@@ -1,0 +1,35 @@
+@use '../../util/scssVariables.style.scss' as constants;
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        background-color: inherit;
+        border: none;
+    }
+
+    button:hover {
+        border: solid 2px constants.$text-base-color;
+        color: constants.$text-light-color;
+    }
+}
+
+.modal-content {
+    height: 40%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: constants.$footer-background-color;
+    border-radius: 10px;
+    color: constants.$text-light-color;
+}

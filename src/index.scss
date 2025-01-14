@@ -1,0 +1,14 @@
+@import url('./pages/App.style.scss');
+@import url('./pages/Home.style.scss');
+
+@import url('./components/card/card.style.scss'); 
+@import url('./components/button/Button.style.scss');
+@import url('./components/footer/Footer.style.scss');
+@import url('./components/Modal/Modal.style.scss');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}

@@ -1,0 +1,35 @@
+
+@use '../../util/scssVariables.style.scss' as constants;
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 300;   
+    color: constants.$text-light-color;
+}
+
+.start {
+    border-radius: 5px;
+    background-color: constants.$blue-button;
+    border: solid 2px constants.$blue-button;
+    transition: all .3s ease-in-out;
+
+    .btn-text {
+        padding: 10px 30px;
+    }
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: constants.$text-base-color;
+}
+
+
+.close {
+    font-size: 2rem;
+    .btn-text {
+        padding: 5px 18px;
+    }
+}
