@@ -23,6 +23,10 @@
     }
 }
 
+.header {
+    
+}
+
 .modal-content {
     height: 40%;
     width: 40%;
@@ -32,4 +36,8 @@
     background-color: constants.$footer-background-color;
     border-radius: 10px;
     color: constants.$text-light-color;
+}
+
+.hidden {
+    display: none;
 }

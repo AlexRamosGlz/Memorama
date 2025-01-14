@@ -3,10 +3,11 @@ import App from "./pages/App.component";
 import Home from "./pages/Home.component";
 import Footer from "./components/footer/Footer.component";
 import Modal from "./components/Modal/Modal.components";
+import { UIProvider } from "./context/UIContext";
 
 function Router() {
   return (
-    <>
+    <UIProvider>
       <BrowserRouter>
         <Modal />
         <Routes>
@@ -15,7 +16,7 @@ function Router() {
         </Routes>
         <Footer />
       </BrowserRouter>
-    </>
+    </UIProvider>
   );
 }
 
