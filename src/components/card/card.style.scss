@@ -1,13 +1,25 @@
+@use '../../util/scssVariables.style.scss' as constants;
+
 
 .card {
     border-radius: 20px;
-    box-shadow: 1px 3px rgb(0, 0, 0, .03);
-    background-color: #868e96;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: transparent;
     text-align: center;
-    color: white;
-    height: 10rem;
-    width: 5rem;
+    color: constants.$blue-button;
     transition: transform .1s ease-in;
+    padding: .1rem;
+    justify-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+}
+
+.selected {
+    opacity: 0;
 }
 
 

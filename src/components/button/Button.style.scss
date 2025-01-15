@@ -33,3 +33,33 @@
         padding: 5px 18px;
     }
 }
+
+.settings {
+    border-radius: 50px;
+    border: none;
+    background-color: transparent;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: all .3s ease-out;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 1rem 1.5rem;
+    height: 4rem;
+    width: 4rem;
+    
+    .btn-text {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    img {
+        height: 50px;
+    }
+}
+
+.settings:hover {
+    transform: rotateZ(180deg);
+    cursor: pointer;
+}
