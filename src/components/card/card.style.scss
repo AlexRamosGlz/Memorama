@@ -1,7 +1,7 @@
 @use '../../util/scssVariables.style.scss' as constants;
 
 
-.card {
+.container {
     border-radius: 20px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background-color: transparent;
@@ -9,20 +9,61 @@
     color: constants.$blue-button;
     transition: transform .1s ease-in;
     padding: .1rem;
-    justify-self: stretch;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
     font-weight: 500;
     font-family: "Poppins", sans-serif;
+    position: relative;
+    justify-self: stretch;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.selected {
-    opacity: 0;
+.correct {
+    // background-color: green;
+    opacity: .3;
 }
 
-
-.card:hover {
+.container:hover {
     transform: translateY(-4px);
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all .2s ease-in;
+    font-weight: 600;
+} 
+
+.card--front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background-color: transparent;
+}
+
+.card--back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background-size: cover;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/76/Bandera_de_M%C3%A9xico_(1934-1968).png');
+    border-radius: 20px;
+    background-position: center;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.text-justify {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

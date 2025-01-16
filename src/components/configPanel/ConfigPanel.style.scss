@@ -1,0 +1,30 @@
+@use '../../util/scssVariables.style.scss' as constants;
+
+.config-panel {
+    border-radius: 15px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: constants.$white;
+    padding: 3rem;
+    margin: 1rem 1.5rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box {
+    text-align: center;
+}
+
+button {
+    margin-top: 3rem;
+} 
+
+.panel-title {
+    color: constants.$blue-button;
+    margin-bottom: 1.5rem;
+}

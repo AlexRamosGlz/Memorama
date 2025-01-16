@@ -3,6 +3,7 @@ import { createContext, useContext, useReducer } from "react";
 const initialState = {
   modalOpen: false,
   isLoading: false,
+  panelOpen: false,
 };
 
 function reducer(state, action) {
@@ -13,6 +14,8 @@ function reducer(state, action) {
       return { ...state, isLoading: false };
     case "modal/toogle":
       return { ...state, modalOpen: !state.modalOpen };
+    case "panel/toogle":
+      return { ...state, panelOpen: !state.panelOpen };
     default:
       throw new Error("Uknown action type!");
   }
@@ -21,7 +24,7 @@ function reducer(state, action) {
 const UIContext = createContext();
 
 function UIProvider({ children }) {
-  const [{ isLoading, modalOpen }, dispatch] = useReducer(
+  const [{ isLoading, modalOpen, panelOpen }, dispatch] = useReducer(
     reducer,
     initialState
   );
@@ -30,8 +33,16 @@ function UIProvider({ children }) {
     dispatch({ type: "modal/toogle" });
   }
 
+  function handleTooglePanel() {
+    dispatch({ type: "panel/toogle" });
+  }
+
   function handleLoading() {
     dispatch({ type: "loading" });
+  }
+
+  function handleSetLoaded() {
+    dispatch({ type: "loaded" });
   }
 
   return (
@@ -41,6 +52,9 @@ function UIProvider({ children }) {
         modalOpen,
         handleToogleModal,
         handleLoading,
+        handleSetLoaded,
+        handleTooglePanel,
+        panelOpen,
       }}
     >
       {children}
