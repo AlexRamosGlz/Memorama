@@ -4,9 +4,13 @@ const initalState = {
   elements: [],
   columns: 4,
   rows: 2,
+  highscore: 0,
+  clicks: 0,
+  timer: 300
 };
 
 function reducer(state, action) {
+  debugger
   switch (action.type) {
     case "game/loading":
       return { ...state, elements: action.payload };
@@ -14,6 +18,11 @@ function reducer(state, action) {
       return { ...state, columns: action.payload };
     case "row/change":
       return { ...state, rows: action.payload };
+    case "highscore/update":
+      return { ...state, highscore: action.payload };
+    case "clicks/update":
+      return { ...state, clicks: state.clicks++ };
+    
     default:
       throw new Error("Uknown action type");
   }
@@ -22,7 +31,7 @@ function reducer(state, action) {
 const GameContext = createContext();
 
 function GameProvider({ children }) {
-  const [{ elements, columns, rows }, dispatch] = useReducer(
+  const [{ elements, columns, rows, highscore, clicks }, dispatch] = useReducer(
     reducer,
     initalState
   );
@@ -35,6 +44,10 @@ function GameProvider({ children }) {
       const randomIndex = Math.floor(Math.random() * length);
       if (arr[randomIndex] === null) arr[randomIndex] = elements[1];
     }
+  }
+
+  function handleUpdateClicks() {
+    dispatch({ type: "clicks/update"});
   }
 
   function handleColumnsChange(value) {
@@ -54,6 +67,9 @@ function GameProvider({ children }) {
         elements,
         handleColumnsChange,
         handleRowsChange,
+        highscore,
+        clicks,
+        handleUpdateClicks
       }}
     >
       {children}

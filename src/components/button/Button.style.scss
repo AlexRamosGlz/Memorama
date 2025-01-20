@@ -8,6 +8,10 @@
     font-size: 1rem;
     font-weight: 600;   
     color: constants.$text-light-color;
+
+    .btn-text {
+        padding: 10px 30px;
+    }
 }
 
 .start {
@@ -26,12 +30,18 @@
     color: constants.$text-base-color;
 }
 
-
 .close {
     font-size: 2rem;
     .btn-text {
         padding: 5px 18px;
     }
+}
+
+.quit {
+    background-color: transparent;
+    color: constants.$blue-button;
+    border: solid 2px constants.$blue-button;
+    border-radius: 5px;
 }
 
 .settings {
@@ -41,7 +51,7 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: all .3s ease-out;
     position: absolute;
-    right: 0;
+    right: -1rem;
     bottom: 0;
     margin: 1rem 1.5rem;
     height: 4rem;

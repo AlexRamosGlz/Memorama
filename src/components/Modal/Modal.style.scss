@@ -4,39 +4,58 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 0;
-    width: 100vw;
-    height: 100vh;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
-
-    button {
-        background-color: inherit;
-        border: none;
-    }
-
-    button:hover {
-        border: solid 2px constants.$text-base-color;
-        color: constants.$text-light-color;
-    }
 }
 
-.header {
-    
-}
 
 .modal-content {
-    height: 40%;
     width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: constants.$footer-background-color;
+    flex-direction: column;
     border-radius: 10px;
-    color: constants.$text-light-color;
+    color: constants.$text-base-color;
+    background-color: constants.$white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    .modal-main {
+        text-align: center;
+        padding: 3rem 5rem 3rem 5rem;
+    }
+
+    strong {
+        font-size: 3rem;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        color: constants.$blue-button;
+    }
 }
+
+.btns-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.highscore {
+    span {
+        color: constants.$blue-button;
+        font-size: 1.5rem;
+        margin: 0 1rem;
+        font-style: italic;
+        font-weight: 500;
+    } 
+}
+
 
 .hidden {
     display: none;
